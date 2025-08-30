@@ -1,3 +1,4 @@
+     {% load static %}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -12,7 +13,7 @@
 	<!-- Dark mode -->
 	<script>
 		const storedTheme = localStorage.getItem('theme')
- 
+
 		const getPreferredTheme = () => {
 			if (storedTheme) {
 				return storedTheme
@@ -66,11 +67,11 @@
 
 			}
 		})
-		
+
 	</script>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="static/images/favicon.ico">
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,13 +79,13 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="static/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="static/vendor/glightbox/css/glightbox.css">
-	<link rel="stylesheet" type="text/css" href="static/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/all.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/glightbox/css/glightbox.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/choices/css/choices.min.css' %}">
 
 	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="static/css/style-rtl.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style-rtl.css' %}">
 
 </head>
 
@@ -97,11 +98,10 @@
 		<div class="container">
 			<!-- Logo START -->
 			<a class="navbar-brand" href="school-home.html">
-				<img class="light-mode-item navbar-brand-item" src="static/images/logo.svg" alt="logo">
-				<img class="dark-mode-item navbar-brand-item" src="static/images/logo-light.svg" alt="logo">
+				<img class="light-mode-item navbar-brand-item" src="{% static 'images/logo.svg' %}" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="{% static 'images/logo-light.svg' %}" alt="logo">
 			</a>
 			<!-- Logo END -->
-	
 			<!-- Responsive navbar toggler -->
 			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-animation">
@@ -110,7 +110,7 @@
 					<span></span>
 				</span>
 			</button>
-	
+
 			<!-- Main navbar START -->
 			<div class="navbar-collapse collapse" id="navbarCollapse">
 
@@ -167,7 +167,7 @@
                     <a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
                       <div class="me-3">
                         <div class="avatar avatar-md">
-                          <img class="avatar-img rounded-circle" src="static/images/avatar/03.jpg" alt="avatar">
+                          <img class="avatar-img rounded-circle" src="{% static 'images/avatar/03.jpg' %}" alt="avatar">
                         </div>
                       </div>
                       <div>
@@ -193,8 +193,9 @@
 				<li class="nav-item ms-3 dropdown">
 					<!-- Avatar -->
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-						<img class="avatar-img rounded-circle" src="static/images/avatar/01.jpg" alt="avatar">
+						<img class="avatar-img rounded-circle" src="{% static 'images/avatar/01.jpg' %}" alt="avatar">
 					</a>
+
 
 					<!-- Profile dropdown START -->
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
@@ -203,7 +204,7 @@
 							<div class="d-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar me-3">
-									<img class="avatar-img rounded-circle shadow" src="static/images/avatar/01.jpg" alt="avatar">
+									<img class="avatar-img rounded-circle shadow" src="{% static 'images/avatar/01.jpg' %}" alt="avatar">
 								</div>
 								<div>
 									<a class="h6" href="#">ایلیا حسینی</a>
@@ -241,7 +242,7 @@
 									</svg> Auto
 								</button>
 							</div>
-						</li> 
+						</li>
 						<!-- Dark mode options END-->
 					</ul>
 					<!-- Profile dropdown END -->
@@ -257,7 +258,7 @@
 
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
-	
+
 <!-- =======================
 Main Banner START -->
 <section class="position-relative overflow-hidden pb-0 pb-sm-5">
@@ -292,7 +293,7 @@ Main Banner START -->
 
 				<!-- Content -->
 				<p class="mb-3 col-lg-8">ما خیلی مشتاقیم که با بچه‌ها کار کنیم و در حرفه‌شان تغییری ایجاد کنیم. مربی بودن چیزی است که همیشه می‌خواستیم باشیم.</p>
-			
+
 				<!-- Button -->
 				<a href="#" class="btn btn-lg btn-blue mb-0">ثبت نام</a>
 			</div>
@@ -307,10 +308,10 @@ Main Banner START -->
 				<div class="d-flex align-items-center mb-3">
 					<div class="avatar avatar-xl">
 						<!-- Avatar image -->
-						<img class="avatar-img rounded-circle" src="static/images/avatar/01.jpg" alt="avatar">
+						<img class="avatar-img rounded-circle" src="{% static 'images/avatar/01.jpg' %}" alt="avatar">
 						<!-- Medal badge -->
 						<div class="position-absolute bottom-0 end-0">
-							<img src="static/images/element/medal-badge.png" class="position-relative" alt="">
+							<img src="{% static 'images/element/medal-badge.png' %}" class="position-relative" alt="">
 							<span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">یکم</sup></span>
 						</div>
 					</div>
@@ -325,10 +326,10 @@ Main Banner START -->
 				<div class="d-flex align-items-center mb-3">
 					<div class="avatar avatar-xl">
 						<!-- Avatar image -->
-						<img class="avatar-img rounded-circle" src="static/images/avatar/03.jpg" alt="avatar">
+						<img class="avatar-img rounded-circle" src="{% static 'images/avatar/03.jpg' %}" alt="avatar">
 						<!-- Medal badge -->
 						<div class="position-absolute bottom-0 end-0">
-							<img src="static/images/element/medal-badge.png" class="position-relative" alt="">
+							<img src="{% static 'images/element/medal-badge.png' %}" class="position-relative" alt="">
 							<span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">دوم</sup></span>
 						</div>
 					</div>
@@ -343,10 +344,10 @@ Main Banner START -->
 				<div class="d-flex align-items-center">
 					<div class="avatar avatar-xl">
 						<!-- Avatar image -->
-						<img class="avatar-img rounded-circle" src="static/images/avatar/06.jpg" alt="avatar">
+						<img class="avatar-img rounded-circle" src="{% static 'images/avatar/06.jpg' %}" alt="avatar">
 						<!-- Medal badge -->
 						<div class="position-absolute bottom-0 end-0">
-							<img src="static/images/element/medal-badge.png" class="position-relative" alt="">
+							<img src="{% static 'images/element/medal-badge.png' %}" class="position-relative" alt="">
 							<span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">سوم</sup></span>
 						</div>
 					</div>
@@ -370,7 +371,7 @@ Main Banner START -->
 						<div class="d-sm-flex justify-content-between align-items-center mb-3">
 							<div class="d-sm-flex align-items-center">
 								<!-- Image -->
-								<img src="static/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
+								<img src="{% static 'images/element/medal.svg' %}" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
 								<!-- Title -->
 								<h5 class="mb-2 mb-sm-0">بهترین مدرسه سال</h5>
 							</div>
@@ -385,7 +386,7 @@ Main Banner START -->
 						<div class="d-sm-flex justify-content-between align-items-center mb-3">
 							<div class="d-sm-flex align-items-center">
 								<!-- Image -->
-								<img src="static/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
+								<img src="{% static 'images/element/medal.svg' %}" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
 								<!-- Title -->
 								<h5 class="mb-2 mb-sm-0">بهترین مدرسه انضباطی سال</h5>
 							</div>
@@ -410,7 +411,7 @@ Main Banner START -->
 					</svg>
 				</figure>
 				<!-- Image -->
-				<img src="static/images/bg/06.jpg" class="rounded-3" alt="">
+				<img src="{% static 'images/bg/06.jpg' %}" class="rounded-3" alt="">
 			</div>
 			<!-- Right content END -->
 		</div>
@@ -439,7 +440,7 @@ Subject START -->
 						<h3 class="mb-2"><a href="#" class="stretched-link">دبستان</a></h3>
 						<h6 class="lead">۳۵ درس</h6>
 						<!-- Image -->
-						<img src="static/images/element/primary-school.svg" class="opacity-5 mb-n5" alt="">
+						<img src="{% static 'images/element/primary-school.svg' %}" class="opacity-5 mb-n5" alt="">
 					</div>
 				</div>
 			</div>
@@ -457,7 +458,7 @@ Subject START -->
 						<h3 class="mb-2"><a href="#" class="stretched-link">مدرسه راهنمایی</a></h3>
 						<h6 class="lead">۵۴ درس</h6>
 						<!-- Image -->
-						<img src="static/images/element/middle-school.svg" class="opacity-5 mb-n5" alt="">
+						<img src="{% static 'images/element/middle-school.svg' %}" class="opacity-5 mb-n5" alt="">
 					</div>
 				</div>
 			</div>
@@ -475,7 +476,7 @@ Subject START -->
 						<h3 class="mb-2"><a href="#" class="stretched-link">دبیرستان</a></h3>
 						<h6 class="lead">۷۰ درس</h6>
 						<!-- Image -->
-						<img src="static/images/element/high-school.svg" class="opacity-5 mb-n5" alt="">
+						<img src="{% static 'images/element/high-school.svg' %}" class="opacity-5 mb-n5" alt="">
 					</div>
 				</div>
 			</div>
@@ -493,7 +494,7 @@ Subject START -->
 						<h3 class="mb-2"><a href="#" class="stretched-link">امتحانات</a></h3>
 						<h6 class="lead">۱۲۰ درس</h6>
 						<!-- Image -->
-						<img src="static/images/element/exam.svg" class="opacity-5 mb-n5" alt="">
+						<img src="{% static 'images/element/exam.svg' %}" class="opacity-5 mb-n5" alt="">
 					</div>
 				</div>
 			</div>
@@ -548,7 +549,7 @@ About START -->
 					<a href="#" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">ادامه مطلب</a>
 					<!-- Video button -->
 					<div class="d-flex align-items-center py-2 ms-0 ms-sm-4">
-						<a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7"> 
+						<a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7">
 							<i class="fas fa-play"></i>
 							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">ویدیو را تماشا کنید</h6>
 						</a>
@@ -592,12 +593,12 @@ About START -->
 								<path d="M57.4765 89.4599C56.997 89.9733 56.2091 90.1786 55.4898 89.9391C54.291 89.7337 53.8799 89.0493 53.7087 88.8439C52.9894 87.9883 53.3661 87.167 53.9827 86.2772C54.154 86.0376 54.6678 85.7638 55.4898 85.5243C57.2367 85.0109 64.2243 84.566 66.9988 83.8131C68.6429 83.4709 70.2528 83.0602 71.9312 82.6837C74.3974 82.1361 76.8294 81.6228 79.2956 81.0068C82.0015 80.3223 84.7075 79.6036 87.3792 78.8165C94.0586 76.9 100.704 74.4701 107.28 71.8349C111.596 70.0895 115.843 68.0703 120.091 66.188C120.844 65.8458 121.564 65.572 122.351 65.2982C123.55 64.8875 124.681 64.6138 125.914 64.2715C127.181 63.9293 128.311 63.6213 129.579 63.3133C131.6 62.8341 133.278 62.5261 135.265 62.0128C135.539 61.8417 135.916 61.9101 136.121 62.1839C136.292 62.4577 136.224 62.8341 135.95 63.0395C134.682 64.7164 133.655 66.1196 132.251 67.7281C131.36 68.7548 130.469 69.6104 129.51 70.5344C128.551 71.4584 127.626 72.2798 126.565 73.1012C125.879 73.6145 125.16 74.0936 124.441 74.5043C120.193 77.0369 115.604 79.0218 110.979 80.8699C104.06 83.642 96.9015 85.798 89.7769 87.5777C85.4953 88.6044 81.1795 89.5284 76.7951 90.1444C73.8836 90.5551 70.9721 90.8289 68.0264 91.0342C66.5535 91.0685 64.0873 90.8631 61.6896 90.5209C60.251 90.2813 58.6068 89.6995 57.4765 89.4599ZM56.6544 89.3231C56.3461 89.3231 56.1749 89.3915 56.1749 89.6311C56.1749 89.9049 56.5174 89.4257 56.6544 89.3231ZM57.2367 86.5852C57.0655 86.1061 56.8257 85.7296 56.5174 86.1745C56.4832 86.243 56.6202 86.2772 56.7229 86.3456C56.9284 86.3798 57.0997 86.4825 57.2367 86.5852Z" fill="#6F42C1"/>
 							</svg>
 						</figure>
-						
+
 						<!-- Image -->
-						<img src="static/images/about/25.jpg" class="rounded-3" alt="">
+						<img src="{% static 'images/about/25.jpg' %}" class="rounded-3" alt="">
 						<!-- Image -->
 						<div class="col-10 position-absolute top-100 start-0 translate-middle mt-n6 ms-n3 d-none d-md-block">
-							<img src="static/images/about/26.jpg" class="rounded-3" alt="">
+							<img src="{% static 'images/about/26.jpg' %}" class="rounded-3" alt="">
 						</div>
 					</div>
 
@@ -692,10 +693,10 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/11.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/11.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
-							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/11.jpg">
+							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/11.jpg' %}">
 								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 							</a>
 						</div>
@@ -706,10 +707,10 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/12.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/12.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
-							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/12.jpg">
+							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/12.jpg' %}">
 								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 							</a>
 						</div>
@@ -720,10 +721,10 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/14.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/14.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
-							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/14.jpg">
+							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/14.jpg' %}">
 								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 							</a>
 						</div>
@@ -735,10 +736,10 @@ Gallery START-->
 				<div class="card overflow-hidden">
 					<div class="card-overlay-hover">
 						<!-- Image -->
-						<img src="static/images/event/17.jpg" class="rounded-3" alt="course image">
+						<img src="{% static 'images/event/17.jpg' %}" class="rounded-3" alt="course image">
 					</div>
 					<!-- Full screen button -->
-					<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/17.jpg">
+					<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/17.jpg' %}">
 						<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 					</a>
 				</div>
@@ -752,7 +753,7 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/16.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/16.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
 							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.youtube.com/embed/tXHviS-4ygo">
@@ -768,10 +769,10 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/13.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/13.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
-							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/13.jpg">
+							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/13.jpg' %}">
 								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 							</a>
 						</div>
@@ -782,10 +783,10 @@ Gallery START-->
 						<div class="card overflow-hidden">
 							<div class="card-overlay-hover">
 								<!-- Image -->
-								<img src="static/images/event/15.jpg" class="rounded-3" alt="course image">
+								<img src="{% static 'images/event/15.jpg' %}" class="rounded-3" alt="course image">
 							</div>
 							<!-- Full screen button -->
-							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="static/images/event/15.jpg">
+							<a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="{% static 'images/event/15.jpg' %}">
 								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
 							</a>
 						</div>
@@ -828,7 +829,7 @@ Blog START-->
 				<!-- Card START -->
 				<div class="card bg-transparent">
 					<!-- Image -->
-					<img src="static/images/event/18.jpg" class="card-img" alt="">
+					<img src="{% static 'images/event/18.jpg' %}" class="card-img" alt="">
 
 					<!-- Card body -->
 					<div class="card-body px-3">
@@ -925,8 +926,8 @@ Footer START -->
 			<div class="col-lg-3">
 				<!-- logo -->
 				<a class="me-0" href="index.html">
-					<img class="light-mode-item h-40px" src="static/images/logo.svg" alt="logo">
-					<img class="dark-mode-item h-40px" src="static/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item h-40px" src="{% static 'images/logo.svg' %}" alt="logo">
+					<img class="dark-mode-item h-40px" src="{% static 'images/logo-light.svg' %}" alt="logo">
 				</a>
 				<p class="my-3">قالب آموزشی Eduport، مخصوص مراکز آموزشی ساخته شده است که به آموزش و مشارکت زبان‌آموزان اختصاص دارد.</p>
 				<!-- Social media icon -->
@@ -953,7 +954,7 @@ Footer START -->
 							<li class="nav-item"><a class="nav-link" href="#">گالری</a></li>
 						</ul>
 					</div>
-									
+
 					<!-- Link block -->
 					<div class="col-6 col-md-4">
 						<h5 class="mb-2 mb-md-4">Community</h5>
@@ -992,14 +993,14 @@ Footer START -->
 				<div class="row g-2 mt-2">
 					<!-- Google play store button -->
 					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="static/images/client/google-play.svg" alt=""> </a>
+						<a href="#"> <img src="{% static 'images/client/google-play.svg' %}" alt=""> </a>
 					</div>
 					<!-- App store button -->
 					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="static/images/client/app-store.svg" alt="app-store"> </a>
+						<a href="#"> <img src="{% static 'images/client/app-store.svg' %}" alt="app-store"> </a>
 					</div>
 				</div> <!-- Row END -->
-			</div> 
+			</div>
 			<!-- Widget 3 END -->
 		</div><!-- Row END -->
 
@@ -1022,7 +1023,7 @@ Footer START -->
 										<i class="fas fa-globe me-2"></i>زبان
 									</a>
 									<ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="static/images/flags/ir.svg" alt="">فارسی</a></li>
+										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'images/flags/ir.svg' %}" alt="">فارسی</a></li>
 									</ul>
 								</div>
 							</li>
@@ -1061,14 +1062,14 @@ Footer END -->
  Admission alert box END -->
 
 <!-- Bootstrap JS -->
-<script src="static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 
 <!-- Vendors -->
-<script src="static/vendor/glightbox/js/glightbox.js"></script>
-<script src="static/vendor/choices/js/choices.min.js"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.js' %}"></script>
+<script src="{% static 'vendor/choices/js/choices.min.js' %}"></script>
 
 <!-- Template Functions -->
-<script src="static/js/functions.js"></script>
+<script src="{% static 'js/functions.js' %}"></script>
 
 </body>
 </html>
