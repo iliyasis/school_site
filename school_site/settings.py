@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "index.apps.IndexConfig",
     "blog.apps.BlogConfig",
-    "news.apps.NewsConfig"
+    "news.apps.NewsConfig",
+    "student.apps.StudentConfig"
 ]
 
 MIDDLEWARE = [
