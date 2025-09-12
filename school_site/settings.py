@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "index.apps.IndexConfig",
     "blog.apps.BlogConfig",
     "news.apps.NewsConfig",
-    "student.apps.StudentConfig"
+    "student.apps.StudentConfig",
+    "django.contrib.humanize"
 ]
 
 MIDDLEWARE = [

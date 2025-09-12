@@ -4,6 +4,7 @@
 
 {% block content %}
 
+{% load humanize %}
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 <!-- =======================
@@ -57,33 +58,37 @@ Page content START -->
 <section class="position-relative pt-0 pt-lg-5">
 	<div class="container">
 		<div class="row g-4">
-			<!-- Card item START -->
-			<div class="col-sm-6 col-lg-4 col-xl-3 shadow-hover">
-				<div class="card bg-transparent">
-					<div class="overflow-hidden rounded-3">
-						<img src="{% static 'images/event/02.jpg' %}" class="card-img" alt="course image">
-						<!-- Overlay -->
-						<div class="bg-overlay bg-dark opacity-4"></div>
-						<div class="card-img-overlay d-flex align-items-start p-3">
-							<!-- badge -->
-							<a href="#" class="badge text-bg-danger">زندگی دانش آموزی</a>
-						</div>
-					</div>
+            {% for post in posts %}
 
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Title -->
-						<h5 class="card-title"><a href="#">چطور بدون استرس درس بخوانیم</a></h5>
-						<p class="text-truncate-2">بی‌احتیاطی توهین‌آمیز، همه کار را انجام می‌دهد. عمدتاً فراتر از کمرویی سرهنگ من پیشنهاد می‌شود. اگر وارد شوید، چنین کمکی از شما بر می‌آید. پیشنهاد خنده، هر پسری را که قانون در نظر می‌گیرد، می‌خنداند. به جز اینکه آزرده خاطر شود، مورد نیاز است.</p>
-						<!-- Info -->
-						<div class="d-flex justify-content-between">
-							<h6 class="mb-0"><a href="#">فرانسسکو گوئرو</a></h6>
-							<span class="small">10 ماه پیش</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
+                <!-- Card item START -->
+                <div class="col-sm-6 col-lg-4 col-xl-3 zoom-hover shadow-hover mx-3 rounded-2">
+                    <div class="card bg-transparent">
+                        <div class="overflow-hidden rounded-3">
+                            <img src="{% static 'images/event/02.jpg' %}" class="card-img" alt="course image">
+                            <!-- Overlay -->
+                            <div class="bg-overlay bg-dark opacity-4"></div>
+                            <div class="card-img-overlay d-flex align-items-start p-3">
+                                <!-- badge -->
+                                <a href="#" class="badge text-bg-danger">موضوغ</a>
+                            </div>
+                        </div>
+
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h5 class="card-title"><a href="{% url 'blog:blog_detail' slug=post.slug %}">{{ post.title }}</a></h5>
+                            <p class="text-truncate-2">{{ post.lead }}</p>
+                            <!-- Info -->
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-0"><a href="#">{{ post.author }}</a></h6>
+                                <span class="small">{{ post.created_on|naturaltime }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card item END -->
+
+             {% endfor %}
 
 
 
