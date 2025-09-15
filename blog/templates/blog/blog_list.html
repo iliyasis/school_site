@@ -81,7 +81,7 @@ Page content START -->
                             <!-- Info -->
                             <div class="d-flex justify-content-between">
                                 <h6 class="mb-0"><a href="#">{{ post.author }}</a></h6>
-                                <span class="small">{{ post.created_on|naturaltime }}</span>
+                                <span class="small">{{ post.created_on|naturalday }}</span>
                             </div>
                         </div>
                     </div>
@@ -89,6 +89,34 @@ Page content START -->
                 <!-- Card item END -->
 
              {% endfor %}
+
+                <!-- Example Add Card item START -->
+                <div class="col-sm-6 col-lg-4 col-xl-3 zoom-hover shadow-hover mx-3 rounded-2">
+                    <div class="card bg-transparent">
+                        <div class="overflow-hidden rounded-3">
+                            <img src="{% static 'images/avatar/plus.png' %}" class="card-img" alt="plus blog image">
+                            <!-- Overlay -->
+                            <div class="bg-overlay bg-dark opacity-4"></div>
+                            <div class="card-img-overlay d-flex align-items-start p-3">
+                                <!-- badge -->
+                                <a href="#" class="badge text-bg-danger"></a>
+                            </div>
+                        </div>
+
+                        <!-- Card body -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h5 class="card-title"><a href="{% url 'blog:blog_manage' %}">اضافه کردن بلاگ</a></h5>
+                            <p class="text-truncate-2"></p>
+                            <!-- Info -->
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-0"><a href="#"></a></h6>
+                                <span class="small"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example Add Card item END -->
 
 
 

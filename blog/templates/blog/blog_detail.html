@@ -5,6 +5,7 @@
 {% block content %}
 
 {% load humanize %}
+{% load snip %}
 
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
@@ -32,7 +33,7 @@ Main Content START -->
 							</div>
 							<!-- Info -->
 							<ul class="list-inline list-unstyled">
-								<li class="list-inline-item d-lg-block my-lg-2">{{ post.author.date_joined|naturaltime }}</li>
+								<li class="list-inline-item d-lg-block my-lg-2">{{ post.author.date_joined|naturalday }}</li>
 								<li class="list-inline-item d-lg-block my-lg-2">زمان مطالعه: 5 دقیقه</li>
 								<li class="list-inline-item badge text-bg-orange"><i class="far text-white fa-heart me-1"></i>26</li>
 								<li class="list-inline-item badge text-bg-info"><i class="far fa-eye me-1"></i>2K</li>
@@ -43,7 +44,7 @@ Main Content START -->
 					<!-- Content -->
 					<div class="col-lg-9 order-1">
 						<!-- Pre title -->
-						<span>{{ post.created_on|naturaltime }}</span><span class="mx-2">|</span><div class="badge text-bg-success">موضوع</div>
+						<span>{{ post.created_on|naturalday }}</span><span class="mx-2">|</span><div class="badge text-bg-success">موضوع</div>
 						<!-- Title -->
 						<h1 class="mt-2 mb-0 display-5">{{ post.title }}</h1>
 						<!-- Info -->
@@ -57,7 +58,7 @@ Main Content START -->
 					<div class="row mb-4">
 						<h4 class="mt-4">تیتر یک</h4>
 						<div class="col-md-12">
-							<p class="mb-0">{{ post.content }}</p>
+							<p class="mb-0">{{ post.content|snip:100 }}</p>
 						</div>
 					</div>
 				</div>
