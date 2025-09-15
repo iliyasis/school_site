@@ -5,6 +5,8 @@
 {% block content %}
 
 {% load humanize %}
+
+{% load jformat %}
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 <!-- =======================
@@ -81,7 +83,7 @@ Page content START -->
                             <!-- Info -->
                             <div class="d-flex justify-content-between">
                                 <h6 class="mb-0"><a href="#">{{ post.author }}</a></h6>
-                                <span class="small">{{ post.created_on|naturalday }}</span>
+                                <span class="small">{{ post.created_on|jformat:"%d %B %Y" }}</span>
                             </div>
                         </div>
                     </div>

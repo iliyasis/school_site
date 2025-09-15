@@ -1,4 +1,5 @@
 from django.db import models
+from django_jalali.db import models as jmodels
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -24,7 +25,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete= models.SET_NULL,related_name='blog_posts',null=True)
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now= True)
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = jmodels.jDateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:

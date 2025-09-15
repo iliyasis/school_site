@@ -5,6 +5,9 @@
 {% block content %}
 
 {% load humanize %}
+
+{% load jformat %}
+
 {% load snip %}
 
 <!-- **************** MAIN CONTENT START **************** -->
@@ -44,7 +47,7 @@ Main Content START -->
 					<!-- Content -->
 					<div class="col-lg-9 order-1">
 						<!-- Pre title -->
-						<span>{{ post.created_on|naturalday }}</span><span class="mx-2">|</span><div class="badge text-bg-success">موضوع</div>
+						<span>{{ post.created_on|jformat:"%d %B %Y" }}</span><span class="mx-2">|</span><div class="badge text-bg-success">موضوع</div>
 						<!-- Title -->
 						<h1 class="mt-2 mb-0 display-5">{{ post.title }}</h1>
 						<!-- Info -->
