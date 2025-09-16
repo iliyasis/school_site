@@ -24,6 +24,7 @@ class BlogPost(models.Model):
     category = models.ManyToManyField(BlogCategory)
     author = models.ForeignKey(User, on_delete= models.SET_NULL,related_name='blog_posts',null=True)
     content = models.TextField()
+    image = models.ImageField(upload_to="blog_images/",default="blog_images/default.png")
     updated_on = models.DateTimeField(auto_now= True)
     created_on = jmodels.jDateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)

@@ -63,10 +63,10 @@ Page content START -->
             {% for post in posts %}
 
                 <!-- Card item START -->
-                <div class="col-sm-6 col-lg-4 col-xl-3 zoom-hover shadow-hover mx-3 rounded-2">
-                    <div class="card bg-transparent">
+                <div class="col-sm-6 bg-body-tertiary col-lg-4 col-xl-3 zoom-hover shadow-hover mx-3 rounded-2">
+                    <div class="card bg-body-tertiary">
                         <div class="overflow-hidden rounded-3">
-                            <img src="{% static 'images/event/02.jpg' %}" class="card-img" alt="course image">
+                            <img src="{{ post.image.url}}" class="card-img" alt="course image">
                             <!-- Overlay -->
                             <div class="bg-overlay bg-dark opacity-4"></div>
                             <div class="card-img-overlay d-flex align-items-start p-3">
