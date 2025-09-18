@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "news.apps.NewsConfig",
     "student.apps.StudentConfig",
     "django.contrib.humanize",
-    "blog.templatetags.snip",
 ]
 
 MIDDLEWARE = [
