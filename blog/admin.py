@@ -5,6 +5,7 @@ class BlogCategoryAdmin(admin.ModelAdmin):
     pass
 admin.site.register(BlogCategory, BlogCategoryAdmin)
 
+
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'status','created_on')
     list_filter = ("status",)
@@ -12,3 +13,11 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(BlogPost, PostAdmin)
+
+
+class PostCommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email','created_on')
+    list_filter = ("post",)
+    search_fields = ['text',]
+
+admin.site.register(BlogComment, PostCommentAdmin)

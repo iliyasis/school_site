@@ -109,78 +109,45 @@ Main Content START -->
 				<div class="row mt-4">
 					<!-- Comment START -->
 					<div class="col-md-7">
-						<h3>3 comments</h3>
+						<h3>3 کامنت</h3>
+                        {% for comment in post.comments.all %}
 						<!-- Comment level 1-->
-						<div class="my-4 d-flex">
+						<div class="my-4 d-flex bg-body-tertiary p-3 rounded">
 							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'images/avatar/01.jpg' %}" alt="avatar">
 							<div>
 								<div class="mb-2">
-									<h5 class="m-0">Frances Guerrero</h5>
-									<span class="me-3 small">June 11, 2021 at 6:01 am</span>
+									<h5 class="m-0">{{ comment.name }}</h5>
+									<span class="me-3 small">{{ comment.created_on|jformat:"%d %B %Y" }}</span>
 								</div>
-								<p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+								<p>{{ comment.text }}</p>
+								<a href="#" class="btn btn-sm btn-light mb-0">پاسخ</a>
 							</div>
 						</div>
-						<!-- Comment children level 2 -->
-						<div class="my-4 d-flex ps-2 ps-md-4">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'images/avatar/02.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Louis Ferguson</h5>
-									<span class="me-3 small">June 11, 2021 at 6:55 am</span>
-								</div>
-								<p>Water timed folly right aware if oh truth. Imprudence attachment him for sympathize. Large above be to means. Dashwood does provide stronger is. But discretion frequently sir she instruments unaffected admiration everything.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
-						<!-- Comment children level 3 -->
-						<div class="my-4 d-flex ps-3 ps-md-5">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'images/avatar/01.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Frances Guerrero</h5>
-									<span class="me-3 small">June 12, 2021 at 7:30 am</span>
-								</div>
-								<p>Water timed folly right aware if oh truth.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
-						<!-- Comment level 1 -->
-						<div class="my-4 d-flex">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'images/avatar/04.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Judy Nguyen</h5>
-									<span class="me-3 small">June 18, 2021 at 11:55 am</span>
-								</div>
-								<p>Fulfilled direction use continual set him propriety continued. Saw met applauded favorite deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther-related bed and passage comfort civilly.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
+                        {% endfor %}
+
 					</div>
 					<!-- Comment END -->
 
 					<!-- Form START -->
 					<div class="col-md-5">
 						<!-- Title -->
-						<h3 class="mt-3 mt-sm-0">Your Views Please!</h3>
-						<small>Your email address will not be published. Required fields are marked *</small>
+						<h3 class="mt-3 mt-sm-0">نظرات خود را با ما به اشتراک بگذارید</h3>
+						<small>آدرس ایمیل شما منتشر نخواهد شد. فیلدهای ضروری با * مشخص شده‌اند.</small>
 
 						<form class="row g-3 mt-2 mb-5">
 							<!-- Name -->
 							<div class="col-lg-6">
-								<label class="form-label">Name *</label>
+								<label class="form-label">نام *</label>
 								<input type="text" class="form-control" aria-label="First name">
 							</div>
 							<!-- Email -->
 							<div class="col-lg-6">
-								<label class="form-label">Email *</label>
+								<label class="form-label">ایمیل *</label>
 								<input type="email" class="form-control">
 							</div>
 							<!-- Comment -->
 							<div class="col-12">
-								<label class="form-label">Your Comment *</label>
+								<label class="form-label">نظر شما *</label>
 								<textarea class="form-control" rows="3"></textarea>
 							</div>
 							<!-- Button -->
@@ -192,6 +159,7 @@ Main Content START -->
 					<!-- Form END -->
 				</div>
 				<!-- Comment review and form END -->
+            <hr> <!-- Divider -->
 			</div>
 		</div> <!-- Row END -->
 	</div>
@@ -199,95 +167,20 @@ Main Content START -->
 <!-- =======================
 Main Content END -->
 
+
+
 <!-- =======================
 Related blog START -->
 <section class="pt-0">
-	<div class="container">
-    <!-- Title -->
-		<div class="row mb-4">
-			<div class="col-12">
-			<h2 class="mb-0">You may also like</h2>
-			</div>
-		</div>
-		
-		<!-- Slider START -->
-		<div class="tiny-slider arrow-round arrow-hover arrow-dark">
-			<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
-				
-				<!-- Slider item -->
-				<div class="card bg-transparent">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'images/event/06.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">Dirty little secrets about the business industry</a></h6>
-								<span class="small">July 21, 2021</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider item -->
-				<div class="card bg-transparent">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'images/event/04.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-								<span class="small">50min ago</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider item -->
-				<div class="card bg-transparent">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'images/event/03.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">Covid-19 and the college experienced</a></h6>
-								<span class="small">Aug 31, 2021</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider item -->
-				<div class="card bg-transparent">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'images/event/05.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-								<span class="small">50min ago</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Slider END -->
+	<div class=" container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% last_posts 2 %}
+            </div>
+            <div class="col-lg-6 d-lg-none d-block">
+                {% popular_posts %}
+            </div>
+        </div>
 	</div>
 </section>
 <!-- =======================
