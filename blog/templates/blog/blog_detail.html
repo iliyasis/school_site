@@ -31,7 +31,7 @@ Main Content START -->
 								<div class="avatar avatar-xxl">
 									<img class="avatar-img rounded-circle" src="{% static 'images/avatar/09.jpg' %}" alt="avatar">
 								</div>
-								<a href="#" class="h5 stretched-link mt-2 mb-0 d-block">{{ post.author.get_full_name }}</a>
+								<a href="{% url 'blog:author' author=post.author %}" class="h5 stretched-link mt-2 mb-0 d-block">{{ post.author.get_full_name }}</a>
 								<p class="mb-2">{{ post.author.email }}</p>
 							</div>
 							<!-- Info -->
@@ -96,7 +96,7 @@ Main Content START -->
 						<h6 class="mb-2 me-4 d-inline-block">تگ ها:</h6>
 						<ul class="list-inline mb-0 social-media-btn">
                             {% for tag in post.category.all %}
-							    <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">{{ tag.name }}</a> </li>
+							    <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="{% url 'blog:category' cat=tag.name %}">{{ tag.name }}</a> </li>
                             {% endfor %}
 						</ul>
 					</div>

@@ -45,6 +45,14 @@ Page Banner START -->
 						<ol class="breadcrumb mb-0">
 							<li class="breadcrumb-item"><a href="{% url 'index:home' %}">خانه</a></li>
 							<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:blog_list' %}">وبلاگ</a></li>
+                            {% if cat %}
+                            	<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:category' cat %}">{{ cat }}</a></li>
+                            {% endif %}
+
+                            {% if author %}
+                            	<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:author' author %}">{{ author }}</a></li>
+                            {% endif %}
+
 						</ol>
 					</nav>
 				</div>
@@ -82,7 +90,7 @@ Page content START -->
                             <p class="text-truncate-2">{{ post.lead }}</p>
                             <!-- Info -->
                             <div class="d-flex justify-content-between">
-                                <h6 class="mb-0"><a href="#">{{ post.author }}</a></h6>
+                                <h6 class="mb-0"><a href="{% url 'blog:author' author=post.author %}">{{ post.author }}</a></h6>
                                 <span class="small">{{ post.created_on|jformat:"%d %B %Y" }}</span>
                             </div>
                         </div>
