@@ -39,6 +39,13 @@ Page Banner START -->
 				
 				<!-- Title -->
 				<h1>وبلاگ</h1>
+
+                <!-- search box -->
+                <form class="position-relative">
+                    {% csrf_token %}
+                    <input name="s" class="form-control pe-5 bg-body-tertiary" type="search" placeholder="جستجو" aria-label="Search">
+                    <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit"><i class="fas fa-search fs-6 "></i></button>
+                </form>
 				<!-- Breadcrumb -->
 				<div class="d-flex justify-content-center position-relative">
 					<nav aria-label="breadcrumb">

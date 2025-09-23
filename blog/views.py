@@ -9,6 +9,10 @@ def blog_list(request,author=None,cat=None):
     elif cat:
         posts = BlogPost.objects.filter(status=1,category__name=cat)
         context = {'posts': posts, 'cat': cat}
+    elif request.method == 'GET' and request.GET.get('s'):
+        s = request.GET.get('s')
+        posts = BlogPost.objects.filter(title__contains=s)
+        context = {'posts': posts}
     else:
         posts = BlogPost.objects.filter(status=1)
         context = {'posts': posts, }
