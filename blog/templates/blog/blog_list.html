@@ -52,11 +52,11 @@ Page Banner START -->
 						<ol class="breadcrumb mb-0">
 							<li class="breadcrumb-item"><a href="{% url 'index:home' %}">خانه</a></li>
 							<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:blog_list' %}">وبلاگ</a></li>
-                            {% if cat %}
+                            {% if cat != "None" %}
                             	<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:category' cat %}">{{ cat }}</a></li>
                             {% endif %}
 
-                            {% if author %}
+                            {% if author != "None" %}
                             	<li class="breadcrumb-item active" aria-current="page"><a href="{% url 'blog:author' author %}">{{ author }}</a></li>
                             {% endif %}
 
