@@ -16,7 +16,7 @@ admin.site.register(BlogPost, PostAdmin)
 
 
 class PostCommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email','created_on')
+    list_display = ('post','name','created_on')
     list_filter = ("post",)
     search_fields = ['text',]
 

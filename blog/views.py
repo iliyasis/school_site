@@ -1,6 +1,8 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from blog.models import *
+from blog.forms import BlogCommentForm
 # Create your views here.
 
 def blog_list(request,author="None",cat="None"):
@@ -18,7 +20,7 @@ def blog_list(request,author="None",cat="None"):
         s = request.GET.get('s')
         posts = posts.filter(title__contains=s)
 
-    posts = Paginator(posts, 3)
+    posts = Paginator(posts, 4)
     page_number = request.GET.get("page")
 
     try:
@@ -42,4 +44,19 @@ def blog_detail(request,slug):
 def blog_manage(request):
     posts = BlogPost.objects.all()
     context = {'posts': posts}
-    return render(request, "blog/manage/admin-course-list.html",context)/
+    return render(request, "blog/manage/admin-course-list.html",context)
+
+
+def comments(request):
+    if request.method == "POST":
+        post = BlogPost.objects.get(id=request.POST.get('post'))
+        slug = post.slug
+        form = BlogCommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/blog/detail/"+slug)
+        else:
+            return HttpResponseRedirect("/form_not_valid")
+    else:
+        return HttpResponseRedirect("/no_method_post")
+
