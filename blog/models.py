@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import CharField
 from django_jalali.db import models as jmodels
 from django.contrib.auth.models import User
 
@@ -39,7 +40,7 @@ class BlogPost(models.Model):
 
 class BlogComment(models.Model):
     post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = CharField(max_length=250)
     email = models.EmailField()
     text = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

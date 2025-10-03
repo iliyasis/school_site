@@ -2,7 +2,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from blog.models import *
-from blog.forms import BlogCommentForm
+from blog.forms import CommentForm
 # Create your views here.
 
 def blog_list(request,author="None",cat="None"):
@@ -37,8 +37,9 @@ def blog_list(request,author="None",cat="None"):
     return render(request, "blog/blog_list.html", context)
 
 def blog_detail(request,slug):
+    context ={}
     post = BlogPost.objects.get(slug=slug)
-    context = {'post': post}
+    context['post'] = post
     return render(request, "blog/blog_detail.html", context)
 
 def blog_manage(request):
@@ -47,16 +48,12 @@ def blog_manage(request):
     return render(request, "blog/manage/admin-course-list.html",context)
 
 
-def comments(request):
-    if request.method == "POST":
-        post = BlogPost.objects.get(id=request.POST.get('post'))
-        slug = post.slug
-        form = BlogCommentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/blog/detail/"+slug)
-        else:
-            return HttpResponseRedirect("/form_not_valid")
+def comment(request, slug):
+    post = BlogPost.objects.get(slug=slug)
+    form = CommentForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/blog/detail/"+ slug)
+        print("is valid")
     else:
-        return HttpResponseRedirect("/no_method_post")
-
+        print("not valid")

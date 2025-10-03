@@ -9,6 +9,6 @@ urlpatterns = [
     path("author/<author>", views.blog_list,name="author"),
     path("detail/<slug>", views.blog_detail,name="blog_detail"),
     path("manage/", views.blog_manage,name="blog_manage"),
+    path("comment/<slug>", views.comment,name="comment"),
     ##path("test/", views.test,name="test"),
-    path("comment/", views.comments, name="comment"),
 ]

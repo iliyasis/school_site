@@ -133,13 +133,15 @@ Main Content START -->
 						<!-- Title -->
 						<h3 class="mt-3 mt-sm-0">نظرات خود را با ما به اشتراک بگذارید</h3>
 						<small>آدرس ایمیل شما منتشر نخواهد شد. فیلدهای ضروری با * مشخص شده‌اند.</small>
-						<form action="{% url 'blog:comment' %}" method="post" class="row g-3 mt-2 mb-5">
+						<form action="{% url 'blog:comment' post.slug %}" method="post" class="row g-3 mt-2 mb-5">
                             {% csrf_token %}
-                            <input type="hidden" name="post" value="{{ post.id }}">
+                            <select hidden="hidden" name="post" class="form-control">
+                                <option value="{{ post.id }}">{{ post.id }}</option>
+                            </select>
 							<!-- Name -->
 							<div class="col-lg-6">
 								<label class="form-label">نام *</label>
-								<input name="name" type="text" class="form-control" aria-label="First name">
+                                <input type="text" name="name" >
 							</div>
 							<!-- Email -->
 							<div class="col-lg-6">
