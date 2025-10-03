@@ -156,3 +156,6 @@ JALALI_SETTINGS = {
         ]
     },
 }
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

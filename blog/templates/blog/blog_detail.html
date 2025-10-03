@@ -15,6 +15,17 @@
 	
 <!-- =======================
 Main Content START -->
+
+<!-- massage -->
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
+           {{ message }}
+            <button type="button" class="btn-close mt-1" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+    {% endfor %}
+{% endif %}
 <section class="pb-0 pt-4 pb-md-5">
 	<div class="container">
 		<div class="row">
@@ -141,7 +152,7 @@ Main Content START -->
 							<!-- Name -->
 							<div class="col-lg-6">
 								<label class="form-label">نام *</label>
-                                <input type="text" name="name" >
+                                <input class="form-control" type="text" name="name" >
 							</div>
 							<!-- Email -->
 							<div class="col-lg-6">

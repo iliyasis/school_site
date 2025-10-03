@@ -3,6 +3,10 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from blog.models import *
 from blog.forms import CommentForm
+from django.contrib import messages
+
+
+
 # Create your views here.
 
 def blog_list(request,author="None",cat="None"):
@@ -39,6 +43,7 @@ def blog_list(request,author="None",cat="None"):
 def blog_detail(request,slug):
     context ={}
     post = BlogPost.objects.get(slug=slug)
+
     context['post'] = post
     return render(request, "blog/blog_detail.html", context)
 
@@ -49,11 +54,12 @@ def blog_manage(request):
 
 
 def comment(request, slug):
-    post = BlogPost.objects.get(slug=slug)
     form = CommentForm(request.POST or None)
     if form.is_valid():
         form.save()
+        messages.add_message(request, messages.SUCCESS, "نظر شما با موفقیت ثبت شد","alert-success")
         return HttpResponseRedirect("/blog/detail/"+ slug)
-        print("is valid")
+
     else:
-        print("not valid")
+        messages.add_message(request, messages.ERROR, "ثبت نظر با خطا مواجه شد","alert-danger")
+        return HttpResponseRedirect("/blog/detail/" + slug)
