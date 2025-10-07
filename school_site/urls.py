@@ -35,6 +35,7 @@ urlpatterns = [
     path("news/", include("news.urls")),
     path("student/", include("student.urls")),
     path("robots.txt", include('robots.urls')),
+    path('captcha/', include('captcha.urls')),
 
 
     path(

@@ -42,8 +42,10 @@ def blog_list(request,author="None",cat="None"):
 
 def blog_detail(request,slug):
     context ={}
-    post = BlogPost.objects.get(slug=slug)
+    form = CommentForm(request.POST or None)
+    context['form'] = form
 
+    post = BlogPost.objects.get(slug=slug)
     context['post'] = post
     return render(request, "blog/blog_detail.html", context)
 
