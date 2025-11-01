@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "news.apps.NewsConfig",
     "student.apps.StudentConfig",
     "django.contrib.humanize",
+    "accounts.apps.AccountsConfig"
 ]
 
 SITE_ID = 2

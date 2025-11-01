@@ -195,7 +195,7 @@
 					<!-- Notification dropdown menu END -->
 				</li>
 				<!-- Notification dropdown END -->
-
+{% if request.user.is_authenticated %}
 				<!-- Profile dropdown START -->
 				<li class="nav-item ms-3 dropdown">
 					<!-- Avatar -->
@@ -253,9 +253,15 @@
 						<!-- Dark mode options END-->
 					</ul>
 					<!-- Profile dropdown END -->
+
+
+
 				</li>
 			</ul>
 			<!-- Profile and notification END -->
+            {% else %}
+    <a href="{% url 'accounts:login' %}">ورود</a>
+                    {% endif %}
 		</div>
 	</nav>
 	<!-- Nav END -->
