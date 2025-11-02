@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.contrib.auth.forms import AuthenticationForm
@@ -21,13 +22,16 @@ def login_page(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("index:home")
+                messages.add_message(request, messages.SUCCESS, f"{username} .  ورود شما موفقیت آمیز بود ", "alert-success")
+                return HttpResponseRedirect("/")
             else:
                 print("Invalid username or password")
-                return redirect("accounts:login")
+                messages.add_message(request, messages.ERROR, "ورود ناموفق!", "alert-danger")
+                return HttpResponseRedirect("/accounts/login/")
         else:
             print("validation error")
-    return render(request,"accounts/login.html")
+            messages.add_message(request, messages.ERROR, "ورود ناموفق!", "alert-danger")
+            return HttpResponseRedirect("/accounts/login/")
 
 def sign_up(request):
      return render(request,"accounts/sign_up.html")
