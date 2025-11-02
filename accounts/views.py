@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from django.contrib.auth.forms import AuthenticationForm
-
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 # Create your views here.
@@ -33,5 +33,10 @@ def login_page(request):
             messages.add_message(request, messages.ERROR, "ورود ناموفق!", "alert-danger")
             return HttpResponseRedirect("/accounts/login/")
 
-def sign_up(request):
+def signup_page(request):
      return render(request,"accounts/sign_up.html")
+
+def logout_page(request):
+    messages.add_message(request, messages.ERROR, "از حساب کاربری خود خارج شدید!", "alert-warning")
+    logout(request)
+    return HttpResponseRedirect("/")
